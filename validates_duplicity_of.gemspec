@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ValidatesDuplicityOf::VERSION
   spec.authors       = ["Vincent Durand"]
   spec.email         = ["vincent.durand@madwork.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{ActiveRecord callback which handle the name duplication in your model.}
+  spec.summary       = %q{ActiveRecord callback which handle the name duplication in your model with ease.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
