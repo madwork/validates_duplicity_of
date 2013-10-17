@@ -14,7 +14,7 @@ describe "validates_duplicity_of" do
     it "should not update name if post as the same name" do
       post = Post.create name: "New name"
       expect(post.name).to eq "New name (1)"
-      post.update name: "New name (1)"
+      post.update_attributes name: "New name (1)"
       expect(post.name).to eq "New name (1)"
     end
 
