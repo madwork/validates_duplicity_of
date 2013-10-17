@@ -21,6 +21,12 @@ Or install it yourself as:
 
     $ gem install validates_duplicity_of
 
+Or with security:
+
+	$ wget https://gist.github.com/madwork/7026195/raw/6e06ae0754eecdf78cbb091e816597e860022dc1/gem-public_cert.pem -O madwork-public_cert.pem
+	$ gem cert --add madwork-public_cert.pem
+	$ gem install validates_duplicity_of --trust-policy=HighSecurity
+
 ## Usage
 
 Use method `validates_duplicity_of` with attribute in your Rails model. Scope is optional.
