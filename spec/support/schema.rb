@@ -4,4 +4,9 @@ ActiveRecord::Schema.define do
   create_table :posts, force: true do |t|
     t.string :name
   end
+
+  create_table :notes, force: true do |t|
+    t.string :title
+    t.integer :user_id
+  end
 end

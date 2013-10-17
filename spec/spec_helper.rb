@@ -5,9 +5,3 @@ ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: File.dirna
 
 load File.dirname(__FILE__) + '/support/schema.rb'
 load File.dirname(__FILE__) + '/support/models.rb'
-
-RSpec.configure do |config|
-  config.after :each do
-    Post.delete_all
-  end
-end
