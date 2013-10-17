@@ -1,6 +1,11 @@
-# ValidatesDuplicityOf
+# validates_duplicity_of
 
-TODO: Write a gem description
+ActiveRecord (>= 3) callback which handle the name duplication in your model with ease.
+Ruby 2 only!
+
+**Example :**
+
+Untilted File > Untilted File (1) > Untilted File (2) …
 
 ## Installation
 
@@ -18,7 +23,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use method `validates_duplicity_of` with attribute in your Rails model. Scope is optional.
+
+	class Post
+	  validates_duplicity_of :name, scope: :user_id
+	end
+	
+	p = Post.create name: "Foo", user_id: 1
+	p.name
+	=> "Foo"
+	
+	p = Post.create name: "Foo", user_id: 1
+	p.name
+	=> "Foo (1)"
+
 
 ## Contributing
 
