@@ -33,6 +33,13 @@ describe "validates_duplicity_of" do
         expect(post.name).to eq "New name (1) (#{index + 1})"
       end
     end
+
+    it "should keep the same index with the same name" do
+      Post.create name: "New name (1)"
+      post = Post.create name: "New name (2)"
+      post.update_attributes name: "New name"
+      expect(post.name).to eq "New name (2)"
+    end
   end
 
   context "with scope" do
