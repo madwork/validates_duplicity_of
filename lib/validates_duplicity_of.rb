@@ -5,6 +5,7 @@ module ValidatesDuplicityOf
   def validates_duplicity_of(attr_name, scope: nil, callback: :before_save)
     validates = -> do
       return unless changed.include? attr_name.to_s
+      return unless self[attr_name].present?
       if self.class.exists?(Hash[*[attr_name, self[attr_name], scope, self[scope]].compact])
         if /#{Regexp.escape(self[attr_name])} \(\d+\)$/.match changed_attributes[attr_name.to_s]
           self[attr_name] = changed_attributes[attr_name.to_s]

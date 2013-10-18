@@ -40,6 +40,12 @@ describe "validates_duplicity_of" do
       post.update_attributes name: "New name"
       expect(post.name).to eq "New name (2)"
     end
+
+    it "should not update if name is not present" do
+      Post.create name: ""
+      post = Post.create name: ""
+      expect(post.name).to eq ""
+    end
   end
 
   context "with scope" do
