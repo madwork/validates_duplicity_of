@@ -29,9 +29,9 @@ Or with security:
 
 ## Usage
 
-Use method `validates_duplicity_of` with attribute in your Rails model. Scope is optional.
+Use method `validates_duplicity_of` with attribute in your Rails model. Scope is optional. Default callback is `before_save`.
 
-	class Post
+	class Post < ActiveRecord::Base
 	  validates_duplicity_of :name, scope: :user_id
 	end
 	
@@ -42,6 +42,11 @@ Use method `validates_duplicity_of` with attribute in your Rails model. Scope is
 	p = Post.create name: "Foo", user_id: 1
 	p.name
 	=> "Foo (1)"
+	
+	class Note < ActiveRecord::Base
+	  validates_uniqueness_of :name
+	  validates_duplicity_of :name, callback: :before_validation
+	end
 
 
 ## Contributing
