@@ -2,8 +2,8 @@ require 'validates_duplicity_of/version'
 require 'active_record'
 
 module ValidatesDuplicityOf
-  def validates_duplicity_of(attr_name, scope: nil)
-    before_save do
+  def validates_duplicity_of(attr_name, scope: nil, callback: :before_save)
+    validates = -> do
       return unless changed.include? attr_name.to_s
       if self.class.exists?(Hash[*[attr_name, self[attr_name], scope, self[scope]].compact])
         if /#{Regexp.escape(self[attr_name])} \(\d+\)$/.match changed_attributes[attr_name.to_s]
@@ -17,6 +17,7 @@ module ValidatesDuplicityOf
         end
       end
     end
+    send callback, &validates
   end
 end
 
