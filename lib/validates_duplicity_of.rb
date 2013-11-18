@@ -18,7 +18,7 @@ module ValidatesDuplicityOf
         end
       end
     end
-    send callback, &validates
+    set_callback *callback.to_s.split('_').reverse.map(&:to_sym), &validates # default: set_callback :save, :before, &validates
   end
 end
 
