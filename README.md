@@ -5,7 +5,7 @@ Ruby 2 only!
 
 **Example :**
 
-Untilted File > Untilted File (1) > Untilted File (2) …
+Untitled File > Untitled File (1) > Untitled File (2) …
 
 ## Installation
 
@@ -23,7 +23,7 @@ Or install it yourself as:
 
 Or with security:
 
-	$ wget https://gist.github.com/madwork/7026195/raw/6e06ae0754eecdf78cbb091e816597e860022dc1/gem-public_cert.pem -O madwork-public_cert.pem
+	$ wget http://git.io/hHL6zQ -O madwork-public_cert.pem
 	$ gem cert --add madwork-public_cert.pem
 	$ gem install validates_duplicity_of --trust-policy=HighSecurity
 
@@ -34,20 +34,19 @@ Use method `validates_duplicity_of` with attribute in your Rails model. Scope is
 	class Post < ActiveRecord::Base
 	  validates_duplicity_of :name, scope: :user_id
 	end
-	
+
 	p = Post.create name: "Foo", user_id: 1
 	p.name
 	=> "Foo"
-	
+
 	p = Post.create name: "Foo", user_id: 1
 	p.name
 	=> "Foo (1)"
-	
+
 	class Note < ActiveRecord::Base
 	  validates_uniqueness_of :name
 	  validates_duplicity_of :name, callback: :before_validation
 	end
-
 
 ## Contributing
 
