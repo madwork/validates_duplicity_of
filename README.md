@@ -1,9 +1,9 @@
 # validates_duplicity_of
 
-ActiveRecord (>= 3) callback which handle the name duplication in your model with ease.
+ActiveRecord (>= 3.2) callback which handle the name duplication in your model with ease.
 Ruby 2 only!
 
-**Example :**
+**Example:**
 
 Untitled File > Untitled File (1) > Untitled File (2) …
 
