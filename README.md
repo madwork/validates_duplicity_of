@@ -1,5 +1,8 @@
 # validates_duplicity_of
 
+[![Build Status](https://travis-ci.org/madwork/validates_duplicity_of.png)](https://travis-ci.org/madwork/validates_duplicity_of)
+[![Gem Version](https://badge.fury.io/rb/validates_duplicity_of.png)](http://badge.fury.io/rb/validates_duplicity_of)
+
 ActiveRecord (>= 3.2) callback which handle the name duplication in your model with ease.
 Ruby 2 only!
 
