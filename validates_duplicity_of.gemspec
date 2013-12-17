@@ -6,11 +6,10 @@ require 'validates_duplicity_of/version'
 Gem::Specification.new do |spec|
   spec.name          = "validates_duplicity_of"
   spec.version       = ValidatesDuplicityOf::VERSION
-  spec.authors       = ["Vincent Durand"]
-  spec.email         = ["vincent.durand@madwork.org"]
-  spec.description   = %q{ActiveRecord callback which handle the name duplication in your model.}
-  spec.summary       = %q{ActiveRecord callback which handle the name duplication in your model with ease.}
-  spec.homepage      = ""
+  spec.author        = "Vincent Durand"
+  spec.email         = "vincent.durand@madwork.org"
+  spec.description   = "ActiveRecord callback which handle the name duplication in your model."
+  spec.summary       = "ActiveRecord callback which handle the name duplication in your model with ease."
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -23,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", ">= 2.3"
   spec.add_development_dependency "sqlite3-ruby"
 
-  spec.add_dependency "activerecord", ">= 3.2"
+  spec.add_runtime_dependency "activerecord", ">= 3.2"
 end
