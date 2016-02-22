@@ -52,6 +52,14 @@ describe "validates_duplicity_of" do
       post = Post.create name: "Name"
       expect(post.name).to eq "Name (1)"
     end
+
+    it "should handle non digit matches" do
+      Post.create name: "Name (first)"
+      post = Post.create name: "Name"
+      expect(post.name).to eq "Name"
+      post.update_attributes name: "Name (first)"
+      expect(post.name).to eq "Name (first) (1)"
+    end
   end
 
   context "with scope" do

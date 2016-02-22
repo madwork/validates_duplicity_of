@@ -4,6 +4,7 @@ require 'active_record'
 module ValidatesDuplicityOf
   autoload :Callback,   'validates_duplicity_of/callback'
   autoload :Duplicator, 'validates_duplicity_of/duplicator'
+  autoload :Record,     'validates_duplicity_of/record'
 
   # Creates a before save callback for duplicate value
   # @param attr_name [Symbol] the ActiveRecord attribute
