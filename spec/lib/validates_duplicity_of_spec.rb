@@ -46,6 +46,12 @@ describe "validates_duplicity_of" do
       post = Post.create name: ""
       expect(post.name).to eq ""
     end
+
+    it "should handle invalid previous matches" do
+      Post.create [{ name: "Name" }, { name: "Name (first)" }]
+      post = Post.create name: "Name"
+      expect(post.name).to eq "Name (1)"
+    end
   end
 
   context "with scope" do
