@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe "validates_duplicity_of" do
   context "without scope" do
-    before(:each) { Post.create name: "New name" }
-    after(:each)  { Post.delete_all }
+    before { Post.create name: "New name" }
+    after  { Post.delete_all }
 
     it "should update name if post already exists" do
       10.times do |index|
@@ -49,11 +49,8 @@ describe "validates_duplicity_of" do
   end
 
   context "with scope" do
-    before(:each) do
-      Note.create title: "New title", user_id: 1
-      Note.create title: "New title", user_id: 2
-    end
-    after(:each)  { Note.delete_all }
+    before { Note.create [{ title: "New title", user_id: 1 }, { title: "New title", user_id: 2 }] }
+    after  { Note.delete_all }
 
     it "should update title if note already exists" do
       10.times do |index|
