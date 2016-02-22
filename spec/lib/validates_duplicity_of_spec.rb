@@ -73,14 +73,4 @@ describe "validates_duplicity_of" do
       expect(note.title).to eq "New title (11)"
     end
   end
-
-  context "with before_validation callback" do
-    before(:each) { Comment.create name: "New name" }
-    after(:each)  { Comment.delete_all }
-
-    it "should update name before validation" do
-      comment = Comment.create name: "New name"
-      expect(comment.name).to eq "New name (1)"
-    end
-  end
 end
