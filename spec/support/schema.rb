@@ -9,8 +9,4 @@ ActiveRecord::Schema.define do
     t.string :title
     t.integer :user_id
   end
-
-  create_table :comments, force: true do |t|
-    t.string :name
-  end
 end
