@@ -9,7 +9,7 @@ module ValidatesDuplicityOf
 
     def before_save(record)
       duplicator = Duplicator.new self, record
-      duplicator.validate!
+      duplicator.validate
     end
   end
 end
