@@ -10,12 +10,15 @@ Gem::Specification.new do |spec|
   spec.email         = "vincent.durand@madwork.org"
   spec.description   = "ActiveRecord callback which handle the name duplication in your model."
   spec.summary       = "ActiveRecord callback which handle the name duplication in your model with ease."
+  spec.homepage      = "https://github.com/madwork/validates_duplicity_of"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.required_ruby_version = ">= 2.0"
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
