@@ -27,7 +27,7 @@ module ValidatesDuplicityOf
     end
 
     def where_match(pattern)
-      scoped_relation.where __getobj__.class.arel_table[attr_name].matches(pattern)
+      scoped_relation.where klass.arel_table[attr_name].matches(pattern)
     end
 
     private
@@ -45,7 +45,11 @@ module ValidatesDuplicityOf
     end
 
     def scoped_relation
-      scope ? __getobj__.class.where(scope => __getobj__[scope]) : __getobj__.class
+      scope ? klass.where(scope => __getobj__[scope]) : klass
+    end
+
+    def klass
+      __getobj__.class
     end
   end
 end

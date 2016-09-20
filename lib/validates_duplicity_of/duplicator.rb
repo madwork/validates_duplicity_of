@@ -6,7 +6,7 @@ module ValidatesDuplicityOf
     end
 
     # Updates the attribute of the record
-    def validate!
+    def validate
       return unless @record.update_required?
 
       if changed_attribute_match?
