@@ -1,7 +1,7 @@
 # validates_duplicity_of
 
-[![Build Status](https://img.shields.io/travis/madwork/validates_duplicity_of.svg)](https://travis-ci.org/madwork/validates_duplicity_of)
-[![Gem](https://img.shields.io/gem/v/validates_duplicity_of.svg)](https://rubygems.org/gems/validates_duplicity_of)
+[![Build Status](https://travis-ci.org/madwork/validates_duplicity_of.svg)](https://travis-ci.org/madwork/validates_duplicity_of)
+[![Gem](https://badge.fury.io/rb/validates_duplicity_of.svg)](https://rubygems.org/gems/validates_duplicity_of)
 
 ActiveRecord (>= 3.2) callback which handle the name duplication in your model with ease.
 Ruby 2 only!
